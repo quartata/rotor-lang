@@ -49,25 +49,48 @@ void parse() {
       stack.push(code[++codePointer]);
     } else if(instruction >= '0' && instruction <= '9') {
       stack.push((instruction as String) as int);
-    } else if(instruction == "?") {
+    } else if(instruction == '?') {
       if(!stack.pop()) {
         skip();
       }
-    } else if(instruction == "!") {
+    } else if(instruction == '!') {
       if(stack.pop()) {
         skip();
       }
-    } else if(instruction == "_") { 
+    } else if(instruction == '_') { 
       stack.push(stack[-1]); 
-    } else if(instruction == "/") {
+    } else if(instruction == ')') {
       def temp = stack[-1];
       stack[-1] = stack[-2];
       stack[-2] = temp;
-    } else if(instruction == ";") {
+    } else if(instruction == ':') {
+      redefine(stack.pop(),stack.pop());
+    } else if(instruction == '^') {
+      def i = stack.pop();
+      if(i >= 0 && i < wheels.length) wheelPointer = i;
+    } else if(instruction == '@') {
+      //Rotate
+    } else if(instruction == '+') {
+      stack.push(stack.pop() + stack.pop());
+    } else if(instruction == '/') {
+      stack.push(stack.pop().div(stack.pop()));
+    } else if(instruction == '*') {
+      stack.push(stack.pop() * stack.pop());
+    } else if(instruction == '-') {
+      stack.push(stack.pop() - stack.pop());
+    } else if(instruction == '=') {
+      stack.push(stack.pop().equals(stack.pop()));
+    } else if(instruction == ',') {
+      stack = stack.reverse();
+    } else if(instruction == '\\') {
+      //For
+    } else if(instruction == '|') {
+      //While
+    } else if(instruction == ';') {
       stack.pop();
-    } else if(instruction == "&") {
+    } else if(instruction == '&') {
       reg = stack[-1];
-    } else if(instruction == "~") {
+    } else if(instruction == '~') {
       stack.push(reg);
     } else {
       parseInstruction(instruction);  
@@ -95,6 +118,14 @@ void stdin() {
     stack.push(Eval.me(text));
   } catch(Exception e) {
     stack.push(text);
+  }
+}
+
+void redefine(char c, int n) {
+  int index1 = Arrays.binarySearch(wheels[wheelPointer],(String[])[c as String],comp);
+  int index2 = Arrays.binarySearch(wheels[n],(String[])[c as String],comp);
+  if(index1 >= 0 && index2 >= 0) {
+    wheels[wheelPointer][index1][1] = wheels[n][index2][1];
   }
 }
 
