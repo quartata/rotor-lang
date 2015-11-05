@@ -6,7 +6,7 @@ Core commands are always available regardless of what wheel you are in. They can
 
 `<` Shifts the wheel pointer back by one (wraps around if you hit the beginning).
 
-````` Pushes the following multi-digit number onto the stack. In Rotor, a program like `442` actually pushes a `4`, a `4` and a `2` to the stack rather than the whole number. Using ````` like this: ```442`` will push the number `442` to the stack.
+`` ` `` Pushes the following multi-digit number onto the stack. In Rotor, a program like `442` actually pushes a `4`, a `4` and a `2` to the stack rather than the whole number. Using `` ` `` like this: `` `442`` will push the number `442` to the stack.
 
 `""` Pushes this string literal onto the stack.
 
