@@ -58,7 +58,7 @@ Core commands are always available regardless of what wheel you are in. They can
 
 `e` Pushes Euler's number onto the stack.
 
-`f` Floor and ceiling. By default, this pops off a number and pushes the floor of it -- however, if there is also truthy/falsy value on top of the stack it willpop another number off the stack and either ceiling it if this value is truthy or floor it if this value is falsy.
+`f` Pops a number off the stack and pushes the floor of it.
 
 `g` Pops two objects (not necessarily numbers) off the stack and pushes first > second.
 
@@ -90,15 +90,15 @@ Core commands are always available regardless of what wheel you are in. They can
 
 `u` Pops two numbers off the stack and pushes GCD(first,second). (not implemented)
 
-`v` Nothing yet.
+`v` Pops a number off the stack and pushes 2^x.
 
-`w` Nothing yet.
+`w` Pops a number off the stack and pushes the ceiling of it.
 
 `x` Pops a number off the stack and pushes the reciprocal of it.
 
 `y` Pops a number off the stack and pushes true if it is prime and false if it is not. (not implemented)
 
-`z` Nothing yet.
+`z` Pops a number off the stack, rounds it and pushes the result.
 
 `A` Pops two numbers off the stack and pushes atan2(first,second). (uses radians)
 
@@ -118,9 +118,9 @@ Core commands are always available regardless of what wheel you are in. They can
 
 `I` Pops a number off the stack and pushes the inverse sine of it. (uses radians)
 
-`J` Nothing yet.
+`J` Pops two numbers off the stack and pushes first << second.
 
-`K` Nothing yet.
+`K` Pops two numbers off the stack and pushes first >> second.
 
 `L` Pops two objects off the stack and pushes first <= second.
 
@@ -128,7 +128,7 @@ Core commands are always available regardless of what wheel you are in. They can
 
 `N` Pops a number off the stack and pushes the natural logarithm of it.
 
-`O` Nothing yet.
+`O` General hyperoperations. (not implemented)
 
 `P` Pops two numbers off the stack and pushes first^second.
 

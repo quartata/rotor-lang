@@ -12,8 +12,8 @@ import java.util.Arrays;
     ["G", "x.push(x.pop() >= x.pop());"],
     ["H", ""],
     ["I", "x.push(Math.asin(x.pop()));"],
-    ["J", ""],
-    ["K", ""],
+    ["J", "x.push(x.pop << x.pop())"],
+    ["K", "x.push(x.pop >> x.pop())"],
     ["L", "x.push(x.pop() <= x.pop());"],
     ["M", ""],
     ["N", "x.push(Math.log(x.pop()));"],
@@ -34,7 +34,7 @@ import java.util.Arrays;
     ["c", "x.push(Math.cos(x.pop());"],
     ["d", "x.push(Math.sqrt((x.pop()-x.pop())^2+(x.pop()-x.pop())^2);"],
     ["e", "x.push(Math.E);"],
-    ["f", "def i = x.pop();if(i==0)x.push(Math.floor(x.pop()));if(x==1)x.push(Math.ceil(x.pop()) else x.push(Math.floor(i));"],
+    ["f", "x.push(Math.floor(x.pop()));"],
     ["g", "x.push(x.pop() > x.pop());"],
     ["h", "x.push(Math.hypot(x.pop(),x.pop()));"],
     ["i", "x.push(Math.sin(x.pop()));"],
@@ -47,14 +47,14 @@ import java.util.Arrays;
     ["p", "x.push(Math.PI);"],
     ["q", ""],
     ["r", "new Random().nextInt(x.pop());"],
-    ["s", "x.push(Math.pow(x.pop(),2) as int);"],
+    ["s", "x.push(Math.pow(x.pop(),2));"],
     ["t", "x.push(Math.tan(x.pop()));"],
     ["u", ""],
-    ["v", ""],
-    ["w", ""],
+    ["v", "x.push(Math.pow(2,x.pop())"],
+    ["w", "x.push(Math.ceil(x.pop()));"],
     ["x", "x.push(1.div(x.pop()));"],
     ["y", ""],
-    ["z", ""]
+    ["z", "x.push(Math.round(x.pop()));"]
   ]
 ];
 @Field def stack = [];
