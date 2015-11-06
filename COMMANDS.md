@@ -132,7 +132,7 @@ Core commands are always available regardless of what wheel you are in. They can
 
 `P` Pops two numbers off the stack and pushes first^second.
 
-`Q` Nothing yet.
+`Q` Pushes the golden ratio onto the stack.
 
 `R` Pops two numbers off the stack and pushes the first root of the second. (not implemented).
 
@@ -142,9 +142,9 @@ Core commands are always available regardless of what wheel you are in. They can
 
 `U` Pops two numbers off the stack and pushes LCM(first, second). (not implemented)
 
-`V` Nothing yet.
+`V` Pops a number off the stack and pushes e^x.
 
-`W` Nothing yet.
+`W` Pushes the square root of 2 onto the stack.
 
 `X` Pops two numbers off the stack and pushes the XOR of them.
 
