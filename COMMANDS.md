@@ -44,6 +44,8 @@ Core commands are always available regardless of what wheel you are in. They can
 
 `~` Pushes the current value of the register onto the stack.
 
+`$` Pops the top value off the stack and pushes true if it is equal to the now-top value on the stack and pushes false otherwise
+
 #Wheels
 
 ##Math Wheel
