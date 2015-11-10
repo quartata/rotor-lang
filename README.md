@@ -6,6 +6,6 @@ Rotor is very much WIP - currently there are no CJam-style blocks and only one w
 
 ## Running
 
-groovy Rotor.groovy <FILE> <<< INPUT
+``groovy Rotor.groovy <FILE> <<< INPUT``
 
-Use "" for input if the program doesn't take any.
+Use ``""`` for input if the program doesn't take any.
