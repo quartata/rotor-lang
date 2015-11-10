@@ -159,6 +159,8 @@ class Block {
         stack.push(stack.pop() % i);
       } else if(instruction == '=') {
         stack.push(stack.pop().equals(stack.pop()));
+      } else if(instruction == '$') {
+        stack.push(stack.pop().equals(stack[-1]));
       } else if(instruction == '(') {
         stack = stack.reverse();
       } else if(instruction == '.') {
