@@ -135,6 +135,8 @@ class Block {
         }
       } else if(instruction == '_') { 
         stack.push(stack[-1]); 
+      } else if(instruction == '#') {
+        stack.pop().parse();
       } else if(instruction == ')') {
         def temp = stack[-1];
         stack[-1] = stack[-2];
@@ -204,11 +206,13 @@ class Block {
       } else if(instruction >= '\u000E' && instruction <= '\u001A') {
         int i = instruction as int;
         stack.push(2+i);
-      } else if(instruction == '\u001C' || instruction <= '\u001D') {
+      } else if(instruction == '\u001C' || instruction == '\u001D') {
         int i = instruction as int;
         stack.push(1+i);
       } else if(instruction == '\u007F') {
         stack.push(100);
+      } else if(instruction == '\u001B') {
+        println stack[-1];
       } else {
         parseInstruction(instruction);  
       }
