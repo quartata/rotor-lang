@@ -6,6 +6,6 @@ Rotor is very much WIP - currently there is only one wheel (the math wheel). Mor
 
 ## Running
 
-``groovy Rotor.groovy <FILE> <<< INPUT``
+``groovy RotorEval.groovy <FILE> <<< INPUT``
 
 Use ``""`` for input if the program doesn't take any.
