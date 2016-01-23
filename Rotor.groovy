@@ -147,7 +147,7 @@ class Block {
         def i = stack.pop();
         if(i >= 0 && i < wheels.length) Rotor.wheelPointer = i;
       } else if(instruction == '@') {
-        //Rotate
+        stack.push(stack[-3]);
       } else if(instruction == '+') {
         stack.push(stack.pop() + stack.pop());
       } else if(instruction == '/') {
@@ -168,12 +168,13 @@ class Block {
       } else if(instruction == '.') {
 	     stack.push(stack[-2][stack.pop()]);
       } else if(instruction == ',') {
-        stack[-3][stack.pop()] = stack.pop();
+        stack[-2][stack.pop()] = stack.pop();
       } else if(instruction == '[') {
         for(Object o : stack.pop()) stack.push(o);
       } else if(instruction == ']') {
         def a = [];
         for(Object o : stack) a.push(o);
+        stack.clear();
         stack.push(a);
       } else if(instruction == '\\') {
         def b = stack.pop();
@@ -259,12 +260,22 @@ class RotorComparer implements Comparator<String[]> {
 
 void stdin() {
   String text = System.in.text;
-  if(text.length() == 0 || text == "\n") return;
-  try {
-    stack.push(Eval.me(text));
-  } catch(Exception e) {
-    stack.push(text);
+  if(text.length() == 0 || text == "\n") { 
+    wheelPointer = 1;
+    return; 
   }
+  def result;
+  try {
+    result = Eval.me(text);
+  } catch(Exception e) {
+    result = text;
+  }
+  if(result instanceof String) {
+    wheelPointer = 1;
+  } else {
+    wheelPointer = 0;
+  }
+  stack.push(result);
 }
 
 code=new File(args[0]).text;
